@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="container">
-      <h1 class="mb-4">{{ title }}</h1>
+      <h1 class="my-4">{{ title }}</h1>
     </div>
   </header>
 </template>
