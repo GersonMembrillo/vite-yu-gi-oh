@@ -19,6 +19,7 @@
 <script>
 import { store } from '../data/store';
 import axios from 'axios';
+
 export default {
   name: 'SearchBar',
   data() {

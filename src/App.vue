@@ -1,16 +1,15 @@
 <template>
   <HeaderComponent title="Yu-Gi-Oh Api" />
   <main>
-    <SearchBar"/>
+    <SearchBar />
     <CardList />
   </main>
 </template>
 
 <script>
-import { store } from './data/store'
-import axios from 'axios';
-import HeaderComponent from './components/HeaderComponent.vue'
-import CardList from './components/CardList.vue'
+import { store } from './data/store';
+import HeaderComponent from './components/HeaderComponent.vue';
+import CardList from './components/CardList.vue';
 import SearchBar from './components/SearchBar.vue';
 export default {
   name: 'App',

@@ -1,4 +1,5 @@
 import { reactive } from 'vue';
+import axios from 'axios';
 
 export const store = reactive({
 	cardList: [],
@@ -32,7 +33,7 @@ export const store = reactive({
 		axios
 			.get(url, options)
 			.then((res) => {
-				this.cardList = res.data.data;
+				store.cardList = res.data.data;
 				console.log(res.data.data);
 			})
 			.catch((error) => {
