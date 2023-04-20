@@ -1,7 +1,7 @@
 <template>
   <HeaderComponent title="Yu-Gi-Oh Api" />
   <main>
-    <InputComponent />
+    <SearchBar"/>
     <CardList />
   </main>
 </template>
@@ -11,31 +11,29 @@ import { store } from './data/store'
 import axios from 'axios';
 import HeaderComponent from './components/HeaderComponent.vue'
 import CardList from './components/CardList.vue'
-import InputComponent from './components/InputComponent.vue';
+import SearchBar from './components/SearchBar.vue';
 export default {
   name: 'App',
   components: {
     HeaderComponent,
     CardList,
-    InputComponent,
+    SearchBar,
   },
   data() {
     return {
       store
     }
   },
-  methods: {
-    getCard() {
-      const url = store.baseURL + store.endpoint;
-      axios.get(url).then((res) => {
-        store.cardList = res.data.data;
-        console.log(res.data.data)
-      });
+  computed: {
+    fullName() {
+      return this.name + ' ' + this.surname;
     }
   },
+  methods: {
+
+  },
   mounted() {
-    store.endpoint = 'card'
-    this.getCard()
+    store.getCard();
   }
 }
 </script>
